@@ -3,8 +3,10 @@ import { combineReducers } from 'redux'
 
 import discussion from './discussionReducer'
 import camp from './campReducer'
+import comment from './commentReducer'
 
 export default combineReducers({
   discussion,
-  camp
+  camp,
+  comment
 })

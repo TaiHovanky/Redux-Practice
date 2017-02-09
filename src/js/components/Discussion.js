@@ -3,6 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { createDiscussion } from '../actions/discussionActions' //6) need to make the action
 import { createCamp } from '../actions/campActions'
+import Camp from './Camp'
 
 @connect((store) => {
   return {
@@ -26,7 +27,10 @@ export default class Discussion extends React.Component {
     const { discussion, camps } = this.props;
     var mappedCamps = '';
     if(camps){
-      mappedCamps = camps.map(camp => <li>{camp}</li>)
+      mappedCamps = camps.map(camp => <li>
+        <h4>{camp}</h4>
+        <Camp />
+        </li>)
     }
 
     if(!discussion) {

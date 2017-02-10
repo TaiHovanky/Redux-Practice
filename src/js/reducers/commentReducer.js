@@ -1,9 +1,21 @@
-export default function reducer(state={comments: []}, action) {
+const comment = (state = {}, action) => {
   if(action.type === 'MAKE_COMMENT') {
     return {
-      ...state,
-      comments: [...state.comments, action.payload]
+      id: action.id,
+      inputStr: action.inputStr
     }
   }
   return state
 }
+
+const comments = (state = [], action) => {
+  if(action.type === 'MAKE_COMMENT') {
+    return [
+      ...state,
+      comment(undefined, action)
+    ]
+  }
+  return state
+}
+
+export default comments

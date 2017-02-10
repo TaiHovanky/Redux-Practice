@@ -1,30 +1,11 @@
+// singular camp component - just presentational
 import React from 'react'
-import { connect } from 'react-redux'
-import { createComment } from '../actions/commentActions'
+import CampList from './CampList'
 
-@connect((store) => {
-  return {
-    comments: store.comment.comments
-  };
-})
+const Camp = ({ onCreateComment, inputStr, id }) => (
+  <li>
+    <h3>{inputStr}</h3>
+  </li>
+)
 
-export default class Camp extends React.Component {
-  makeComment(e) {
-    var comment = this.refs.comment.value;
-    this.props.dispatch(createComment(comment))
-  }
-
-  render() {
-    const { comments } = this.props;
-    var mappedComments = '';
-    if(comments){
-      mappedComments = comments.map(comment => <li>{comment}</li>)
-    }
-    return <div>
-    <ul>{mappedComments}</ul>
-    <label>Reply</label>
-    <input className='commentField' ref='comment'></input>
-    <button onClick={this.makeComment.bind(this)}>Post</button>
-    </div>
-  }
-}
+export default Camp

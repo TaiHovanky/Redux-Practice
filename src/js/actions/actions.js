@@ -1,6 +1,7 @@
 let discussionId = 0
 let campId = 0
 let commentId = 0
+let upvoteId = 0
 //these IDs are used to identify the camp that a discussion belongs to (for example)
 
 export function createDiscussion(inputStr) {
@@ -34,5 +35,26 @@ export function createComment(campId, inputStr) {
     commentId: commentId++,
     campId: campId,
     inputStr
+  }
+}
+
+export function createUpvote() {
+  return {
+    type: 'CREATE_UPVOTE_COUNTER',
+    upvoteId: upvoteId++,
+    count: 0
+  }
+}
+
+export function increaseUpvotes(commentId) {
+  return {
+    type: 'UPVOTE',
+    commentId: commentId
+  }
+}
+
+export function increaseDownvotes() {
+  return {
+    type: 'DOWNVOTE'
   }
 }

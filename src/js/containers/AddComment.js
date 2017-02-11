@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createComment } from '../actions/actions'
+import { createComment, createUpvote } from '../actions/actions'
 
 let AddComment = ({ dispatch, campId }) => {
   let input
@@ -12,6 +12,7 @@ let AddComment = ({ dispatch, campId }) => {
           return
         }
         dispatch(createComment(campId, input.value))
+        dispatch(createUpvote())
         input.value = ''
       }}>
         <input ref={node => {

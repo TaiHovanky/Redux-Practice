@@ -1,7 +1,7 @@
 const camp = (state = {}, action) => {
   if(action.type === 'SET_CAMP') {
     return {
-      id: action.id,
+      campId: action.campId,
       discussionId: action.discussionId,
       inputStr: action.inputStr
     }

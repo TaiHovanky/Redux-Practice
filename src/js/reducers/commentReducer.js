@@ -1,7 +1,8 @@
 const comment = (state = {}, action) => {
   if(action.type === 'MAKE_COMMENT') {
     return {
-      id: action.id,
+      commentId: action.commentId,
+      campId: action.campId,
       inputStr: action.inputStr
     }
   }

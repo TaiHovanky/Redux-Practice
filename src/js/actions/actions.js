@@ -28,10 +28,11 @@ export function selectCamp(campId) { //function is 'action creator'
   }
 }
 
-export function createComment(inputStr) {
+export function createComment(campId, inputStr) {
   return {
     type: 'MAKE_COMMENT',
     commentId: commentId++,
+    campId: campId,
     inputStr
   }
 }

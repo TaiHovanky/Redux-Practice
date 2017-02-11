@@ -7,11 +7,13 @@ class CampList extends React.Component{
     var currCamps = this.props.camps.filter(camp => {
       return camp.discussionId === this.props.discussionId
     });
-    
+
     return (
       <ul>
         {currCamps.map(currCamp =>
-          <Camp key={currCamp.campId}
+          <Camp 
+            key={currCamp.campId}
+            campId={currCamp.campId}
             {...currCamp}
           />
         )}

@@ -11,6 +11,7 @@ export default class DiscussionList extends React.Component{
           <Discussion 
             key={discussion.id}
             {...discussion}
+            camps={this.props.camps}
             // onClick={() => onCreateDiscussion(discussion)}
           />  
         )}

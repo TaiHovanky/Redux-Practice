@@ -7,7 +7,7 @@ class CampParent extends React.Component{
   render(){
     return (<div>
       <AddCamp discussionId={this.props.discussionId} />
-      <Camps discussionId={this.props.discussionId} />
+      <Camps discussionId={this.props.discussionId} camps={this.props.camps} />
     </div>)
   }
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import CampParent from './CampParent'
-import DiscussionList from './DiscussionList'
+import DiscussionList from '../containers/DiscussionList'
 
-const Discussion = ({ onCreateCamp, inputStr, id, camps }) => (
+const Discussion = ({ onCreateCamp, inputStr, discussionId }) => (
   <li>
     <h3>{inputStr}</h3>
-    <CampParent discussionId={id} camps={camps} />
+    <CampParent discussionId={discussionId} />
   </li>
 )
 

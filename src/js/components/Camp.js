@@ -1,8 +1,8 @@
 // singular camp component - just presentational
 import React from 'react'
-import CampList from './CampList'
+import CampList from '../containers/CampList'
 
-const Camp = ({ onCreateComment, inputStr, id }) => (
+const Camp = ({inputStr, key}) => (
   <li>
     <h3>{inputStr}</h3>
   </li>

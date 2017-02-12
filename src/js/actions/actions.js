@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 let discussionId = 0
 let campId = 0
 let commentId = 0
@@ -58,3 +60,23 @@ export function increaseDownvotes() {
     type: 'DOWNVOTE'
   }
 }
+
+export const GET_DISCUSSIONS_REQUEST = 'GET_DISCUSSIONS_REQUEST';
+export const GET_DISCUSSIONS_SUCCESS = 'GET_DISCUSSIONS_SUCCESS';
+//export const ARTICLES_GET_FAILURE = 'ARTICLES_GET_FAILURE';
+
+export function getDiscussions(req) {
+  console.log('getDiscussions action ------', req)
+  var url = 'https://chicagowepapp.firebaseio.com/articles.json';
+  let promise = axios.get(url)
+  return {
+    type: 'GET_DISCUSSIONS_REQUEST',
+    payload: promise
+  }
+}
+
+// {
+//     type: 'GET_DISCUSSIONS_REQUEST',
+//     promise: axios.get('https://chicagowepapp.firebaseio.com/articles.json'),
+//     payload: request.data
+//   }

@@ -10,6 +10,7 @@ const discussion = (state = {}, action) => {
 
 const discussions = (state = [], action) => {
   if(action.type === "CREATE_DISCUSSION") {
+    console.log('discussion made!!!')
     return [
       ...state,
       discussion(undefined, action)
